@@ -25,6 +25,7 @@ RUN apt-get update && apt-get install -y \
     php${PHP_VERSION}-dev \
     php${PHP_VERSION}-xdebug \
     php${PHP_VERSION}-pdo \
+    php${PHP_VERSION}-mbstring \
     unzip \
     zip \
     curl \
