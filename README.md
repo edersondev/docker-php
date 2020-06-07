@@ -19,3 +19,20 @@ services:
       - [host_path]:/var/www/html
 
 ```
+
+###### If you want to change the server name or the document root add environment
+```
+version: '3'
+services:
+  webphp:
+    image: edersondev/php:7.3
+    ports:
+      - "[host_port]:80"
+    volumes:
+      - [host_path]:/var/www/html
+    environment:
+      SERVER_NAME: xpto.local
+      DOCUMENT_ROOT: /var/www/html/public
+```
+
+This image has the last version of composer
