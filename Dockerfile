@@ -1,7 +1,7 @@
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 LABEL maintainer="Ederson Ferreira <ederson.dev@gmail.com>"
 
-ARG PHP_VERSION=7.3
+ARG PHP_VERSION=7.4
 
 ENV TZ=America/Sao_Paulo
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
@@ -10,8 +10,8 @@ COPY ondrej.pgp /root/ondrej.pgp
 
 RUN apt-get update && apt-get install -y --no-install-recommends gnupg \
  && cat /root/ondrej.pgp | apt-key add \
- && echo "deb http://ppa.launchpad.net/ondrej/php/ubuntu bionic main" >> /etc/apt/sources.list.d/ondrej-php.list \
- && echo "deb-src http://ppa.launchpad.net/ondrej/php/ubuntu bionic main" >> /etc/apt/sources.list.d/ondrej-php.list
+ && echo "deb http://ppa.launchpad.net/ondrej/php/ubuntu focal main" >> /etc/apt/sources.list.d/ondrej-php.list \
+ && echo "deb-src http://ppa.launchpad.net/ondrej/php/ubuntu focal main" >> /etc/apt/sources.list.d/ondrej-php.list
 
 RUN apt-get update && apt-get install -y \
     apache2 \
