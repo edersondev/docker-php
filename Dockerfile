@@ -1,7 +1,7 @@
 FROM ubuntu:20.04
 LABEL maintainer="Ederson Ferreira <ederson.dev@gmail.com>"
 
-ARG PHP_VERSION=7.4
+ARG PHP_VERSION=8.0
 
 ENV TZ=America/Sao_Paulo
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
@@ -20,7 +20,6 @@ RUN apt-get update && apt-get install -y \
     php${PHP_VERSION}-cli \
     php${PHP_VERSION} \
     php${PHP_VERSION}-gd \
-    php${PHP_VERSION}-json \
     php${PHP_VERSION}-xml \
     php${PHP_VERSION}-dev \
     php${PHP_VERSION}-xdebug \
