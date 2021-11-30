@@ -74,12 +74,11 @@ RUN { \
 	echo 'opcache.enable_cli=1'; \
 } > /etc/php/${PHP_VERSION}/apache2/conf.d/opcache-recommended.ini
 
-# Configuração Xdebug
+# Configuração Xdebug 3.X
 RUN { \
-    echo 'xdebug.remote_enable=1'; \
-    echo 'xdebug.remote_autostart=1'; \
-    echo 'xdebug.remote_port=9000'; \
-    echo 'xdebug.remote_connect_back=1'; \
+    echo 'xdebug.mode=debug'; \
+    echo 'xdebug.start_with_request=yes'; \
+    echo 'xdebug.discover_client_host=1'; \
 } > /etc/php/${PHP_VERSION}/apache2/conf.d/xdebug-conf.ini
 
 RUN { \
