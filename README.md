@@ -25,7 +25,7 @@ services:
 version: '3'
 services:
   webphp:
-    image: edersondev/php:7.3
+    image: edersondev/php:8.0
     ports:
       - "[host_port]:80"
     volumes:
